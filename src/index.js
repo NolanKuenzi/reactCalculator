@@ -22,39 +22,39 @@ class Calc extends React.Component {
     this.allClear = this.allClear.bind(this);
     this.del = this.del.bind(this);
     this.plusMinus = this.plusMinus.bind(this);
-}
+  }
 
-handleSumbit(event) {
-  event.preventDefault();
-}
+  handleSumbit(event) {
+    event.preventDefault();
+  }
 
-handleInput(event) {
-    this.setState({
-      input: this.state.input + event.target.value
-    });
-}
+  handleInput(event) {
+      this.setState({
+        input: this.state.input + event.target.value
+      });
+  }
 
-solve() {
-  if (this.state.input === "") {
-    alert("Please Enter Values to Calculate");
-  } else {
-      try {
-        this.setState({
-          input: eval(this.state.input).toString()
-        });
-      } catch(error) {
+  solve() {
+    if (this.state.input === "") {
+      alert("Please Enter Values to Calculate");
+    } else {
+        try {
           this.setState({
-            input: "Syntax Error"
+            input: eval(this.state.input).toString()
           });
-		}
-	}
-}
+        } catch(error) {
+            this.setState({
+              input: "Syntax Error"
+            });
+		      }
+	    }
+  }
 
-allClear() {
-  this.setState({
-    input: ""
-  });
-}
+  allClear() {
+    this.setState({
+      input: ""
+    });
+  }
 
 del() {
   this.setState({
@@ -62,19 +62,19 @@ del() {
   });	
 }
 
-plusMinus() {
-  if (Math.sign(this.state.input[0]) === 1 || this.state.input === "") {
-    this.setState({
-      input: "-" + this.state.input	
-    });
-  } else {
+  plusMinus() {
+    if (Math.sign(this.state.input[0]) === 1 || this.state.input === "") {
+      this.setState({
+        input: "-" + this.state.input	
+      });
+    } else {
       this.setState({
         input: this.state.input.replace(this.state.input[0], "")
       });	
     }
-}
+  }
 
-render() {
+  render() {
     return (
       <div id="containerDiv">
         <Header />
