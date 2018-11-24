@@ -9,7 +9,6 @@ function Header() {
     </div>  
     );
 }
-
 class Calc extends React.Component {
   constructor(props) {
     super(props); 
@@ -23,17 +22,14 @@ class Calc extends React.Component {
     this.del = this.del.bind(this);
     this.plusMinus = this.plusMinus.bind(this);
   }
-
   handleSumbit(event) {
     event.preventDefault();
   }
-
   handleInput(event) {
       this.setState({
         input: this.state.input + event.target.value
       });
   }
-
   solve() {
     if (this.state.input === "") {
       alert("Please Enter Values to Calculate");
@@ -49,19 +45,16 @@ class Calc extends React.Component {
 		      }
 	    }
   }
-
   allClear() {
     this.setState({
       input: ""
     });
   }
-
-del() {
-  this.setState({
-    input: this.state.input.replace(this.state.input[this.state.input.length-1], "")
-  });	
-}
-
+  del() {
+    this.setState({
+      input: this.state.input.replace(this.state.input[this.state.input.length-1], "")
+    });	
+  }
   plusMinus() {
     if (Math.sign(this.state.input[0]) === 1 || this.state.input === "") {
       this.setState({
@@ -73,7 +66,6 @@ del() {
       });	
     }
   }
-
   render() {
     return (
       <div id="containerDiv">
@@ -111,7 +103,3 @@ del() {
   }
 }
 ReactDOM.render(<Calc />, document.getElementById("root"));
-
-
-
-
