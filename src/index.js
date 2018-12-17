@@ -103,3 +103,5 @@ class Calc extends React.Component {
   }
 }
 ReactDOM.render(<Calc />, document.getElementById("root"));
+
+export { Calc };
