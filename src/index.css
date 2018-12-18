@@ -1,8 +1,5 @@
 #header {
   text-align: center;
-  position: absolute;
-  bottom: 40em;
-  left: 4em;
   color: teal;
   text-decoration: underline;
 }
@@ -13,7 +10,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  top: 9em;
+  top: 5em;
   padding: .5em;	
   text-align: center;
   background-color: teal;
