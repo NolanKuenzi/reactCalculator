@@ -24,7 +24,7 @@ describe('<Calc /> Component', () => {
       wrapper.find('#divisionSign').simulate('click');
       expect(wrapper.state('input')).toBe('/');
       wrapper.find('#ac').simulate('click');
-      expect(wrapper.state('input')).toBe('')
+      expect(wrapper.state('input')).toBe('');
   });
     
   test('this.del erases last character in input', () => {
